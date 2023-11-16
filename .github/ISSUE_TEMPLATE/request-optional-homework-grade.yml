@@ -1,0 +1,81 @@
+name: Request Optional Homework Grade
+description: Used to request a grade for this extra homework assignment.
+title: Request Optional Homework Grade
+
+labels: ["grade-homework"]
+assignees: 
+  - ybsolomon
+  - FrankGuglielmo
+  - clarejw
+  - MalekeHan
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        :information_source: Use this template to request a grade for this optional homework assignment. Make sure to replace all `[PLACEHOLDER]` placeholder text below, including the `[` and `]` symbols, with the relevant information. See [the template repository](https://github.com/usf-cs272-fall2023/homework-HeaderServer-template/issues/1) for an example issue.
+
+  - type: input
+    id: full_name
+    validations:
+      required: true
+    attributes:
+      label: Full Name
+      description: Please enter your full name as it appears on Canvas.
+  
+  - type: input
+    id: usf_email
+    validations:
+      required: true
+    attributes:
+      label: USF Email
+      description: Please enter your `@usfca.edu` USF email address.
+      placeholder: username@usfca.edu
+  
+  - type: dropdown
+    id: homework
+    validations:
+      required: true
+    attributes:
+      label: Homework
+      description: Enter the homework assignment for which you want to replace the grade.
+      multiple: false
+      options:
+        - FileStemmer
+        - JsonWriter
+        - ArgumentParser
+        - FileIndex
+        - FileSorter
+        - FileFinder
+        - LoggerSetup
+        - MultiReaderLock
+        - PrimeFinder
+        - HtmlCleaner
+        - HtmlFetcher
+        - LinkFinder
+      
+  - type: markdown
+    attributes:
+      value: "## Next Steps"
+
+  - type: markdown
+    attributes:
+      value: |
+        1. After filling out this form, click the "Submit new issue" button to create the issue.
+        
+        2. After the issue is created, add a new comment and [attach 4 screenshots](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files) of your code for the following test cases:
+
+            a. `https://www.cs.usfca.edu/~cs272/hello/?[USF_USERNAME]`
+            b. `https://www.cs.usfca.edu:443/~cs272/redirect/gone#[USF_USERNAME]`
+            c. `https://{hello}/[USF_USERNAME]`
+            d. `<h1>Hello, [USF_USERNAME]</h1>`
+
+            :clipboard: **For each test case, you must replace the `[USF_USERNAME]` placeholder (including the `[` and `]` symbols) with your actual USF username.**
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Acknowledgement
+      description: Please confirm that read the next steps above and understand what to do after creating this issue.
+      options:
+        - label: Yes, I understand that I must add a comment with screenshots.
