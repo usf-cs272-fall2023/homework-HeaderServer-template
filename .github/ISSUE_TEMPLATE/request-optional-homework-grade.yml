@@ -74,6 +74,8 @@ body:
 
   - type: checkboxes
     id: confirmation
+    validations:
+      required: true
     attributes:
       label: Acknowledgement
       description: Please confirm that read the next steps above and understand what to do after creating this issue.
